@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_jenkins',
     'rest_framework',
     'hero'
 ]
@@ -82,6 +83,13 @@ DATABASES = {
     }
 }
 
+# JENKINS_TASKS = (
+#     'django_jenkins.tasks.run_pep8',
+#     'django_jenkins.tasks.run_pyflakes',
+#     'django_jenkins.tasks.run_jslint',
+#     'django_jenkins.tasks.run_csslint',
+#     'django_jenkins.tasks.run_sloccount'
+# )
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
