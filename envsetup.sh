@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [-d "env"]
+if [ -d "env"]
 then
 	echo "python virtual env exists"
 else
@@ -12,7 +12,7 @@ source env/bin/activate
 
 pip install -r requirements.txt
 
-if [-d "logs"]
+if [ -d "logs"]
 then
 	echo "Log folder exists"
 else
