@@ -16,7 +16,7 @@ pipeline{
 		sh '''
 		chmode +x gunicorn.sh
 		./gunicorn.sh
-		''''
+		'''
 	}
 	}
 	stage('setup NGINX')
