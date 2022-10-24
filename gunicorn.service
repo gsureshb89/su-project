@@ -4,11 +4,11 @@ Requires=gunicorn.socket
 After=network.target
 
 [Service]
-User=gsuresh
+User=jenkins
 Group=www-data
 Environment=SECRET_KEY=secret
 WorkingDirectory=/var/lib/jenkins/workspace/django-cicd
-ExecStart=/var/lib/jenkins/workspace/django-cicd/env/bin/gunicorn \
+ExecStart=/bin/bash /var/lib/jenkins/workspace/django-cicd/env/bin/gunicorn \
 	  --error-logfile /var/lib/jenkins/workspace/django-cicd/error.log \ 
           --workers 3 \
           --bind /run/gunicorn.sock \ 
