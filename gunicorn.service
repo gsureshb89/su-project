@@ -11,7 +11,7 @@ WorkingDirectory=/var/lib/jenkins/workspace/django-cicd
 ExecStart=/var/lib/jenkins/workspace/django-cicd/env/bin/gunicorn \
 	  --error-logfile /var/lib/jenkins/workspace/django-cicd/error.log \ 
           --workers 3 \
-          --bind /run/gunicorn.sock \ 
+          --bind run/gunicorn.sock \ 
           herodashboard_server.wsgi:application
 
 [Install]
