@@ -4,7 +4,7 @@ Requires=gunicorn.socket
 After=network.target
 
 [Service]
-User=root
+User=suresh@gsuresh
 Group=www-data
 Environment=SECRET_KEY=secret
 WorkingDirectory=/var/lib/jenkins/workspace/django-cicd
