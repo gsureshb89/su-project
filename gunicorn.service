@@ -7,8 +7,14 @@ After=network.target
 User=root
 Group=www-data
 Environment=SECRET_KEY=secret
+PIDFile = /run/cmdb/cmdb.pid
 WorkingDirectory=/var/lib/jenkins/workspace/django-cicd
+ExecStartPre = /bin/mkdir /run/cmdb
 ExecStart=/var/lib/jenkins/workspace/django-cicd/env/bin/gunicorn --error-logfile /var/lib/jenkins/workspace/django-cicd/error.log --workers 3 --bind /run/gunicorn.sock app.wsgi:application
+
+ExecReload = /bin/kill -s HUP $MAINPID
+ExecStop = /bin/kill -s TERM $MAINPID
+ExecStopPost = /bin/rm -rf /run/cmdb
 
 [Install]
 WantedBy=multi-user.target
